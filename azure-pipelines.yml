@@ -1,42 +1,24 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
-
-name: NetcoreMicroserviceCiCd
-trigger:
+Name: NetcoreMicroserviceCiCd
+Trigger:
 - master
-
-pool:
-  vmImage: 'windows-latest'
-
-variables:
-  
-  buildConfiguration: 'Release'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-    feedsToUse: 'select'
-    diplayName "Restore the build"
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    display name: "Build project"
-
-    - task: DotNetCoreCLI@2
-      inputs:
-        command: 'test'
-        projects: '**/*.csproj'
-        publishTestResults: false
-        Display Name: "Run Unit-Test"
-
-        - task: DotNetCoreCLI@2
-          inputs:
-            command: 'publish'
-            publishWebProjects: true
-            arguments: '**/*.csproj'
-            Displayname: "PublishCustomerAPI"
-            
+Pool:
+VmImage: ubuntu-latest
+varables:
+buildconfiguration: "Release"
+parameters:
+  - name: image
+  displayname: poolImage
+  type: string
+  default: ubuntu-latest
+  values:
+  -windows-latest
+  -ubuntu-latest
+  -macOs-latest
+  jobs:
+    - build
+    displayname: "build"
+    pool:
+    vmimage: ${{parameters.image}}
+    steps:
+      - script: echo "hellow-world"
+      
