@@ -1,18 +1,7 @@
-name: NetcoreMicroserviceCiCd
+name: simplewebapp_$(Date:yyyyMMdd)
 trigger:
-- master
+- main
 pool:
-vmimage: ubuntu-latest
-varables:
-buildconfiguration: "Release"
-parameters:
-  - name: image
-  #displayname: Pool Image
-  displayName: pool Image
-  type:string
-  default:ubuntu-latest
-  values
-  - windows-latest
-  - ubuntu-latest
-  - MacOs-latest
-  #
+  name: default
+steps:
+- task: VSBuild@1
