@@ -1,24 +1,17 @@
-Name: NetcoreMicroserviceCiCd
-Trigger:
+name: NetcoreMicroserviceCiCd
+trigger:
 - master
-Pool:
-VmImage: ubuntu-latest
+pool:
+vmimage: ubuntu-latest
 varables:
 buildconfiguration: "Release"
 parameters:
   - name: image
-  displayname: poolImage
-  type: string
-  default: ubuntu-latest
-  values:
-  -windows-latest
-  -ubuntu-latest
-  -macOs-latest
-  jobs:
-    - build
-    displayname: "build"
-    pool:
-    vmimage: ${{parameters.image}}
-    steps:
-      - script: echo "hellow-world"
-      
+  displayName: poolImage
+  type:string
+  default:ubuntu-latest
+  values
+  - windows-latest
+  - ubuntu-latest
+  - macOs-latest
+  #
