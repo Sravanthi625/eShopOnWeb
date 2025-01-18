@@ -53,10 +53,17 @@
 # - features/* (ex for one senario)
 # Exclude:
 # -features/* (ex for one sinario)
+# paths:
+# exclude:
+# - java.util (only java.util will exclude)
 # pool: 
 # vmimage: ubuntu-latest
 # variables:
 # buildconfiguration: "Release"
+
+# this how only particular file will trigger within 5 min rather then 30 min
+# this how we change the triggering point of your pipeline.
+
 
 #####5 
 
