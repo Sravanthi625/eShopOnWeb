@@ -23,7 +23,6 @@
 # - devlopment
 # - Release
 # pool:
-
 # vmimage: 
 # vmimage: ubuntu-latest
 # variables:
@@ -66,6 +65,25 @@
 # this how we change the triggering point of your pipeline.
 
 
-#####5
+#####5 I want to schdule my pipeline at particular time only?
+# like i want to trigger my pipeline at midnidght 12:00AM only> is it possible?
+
+# yes, it is possible.
+# name:netcoremicroservicecicd
+# trigger:
+#    - master
+
+# schdules: 
+# - corn: "0.0.*.*.*"
+# displayname: dailyMidghtbuild
+# branches: 
+# Include:
+# - master
+
+# pool: vmimage: ubuntu-latest
+# variables: 
+# buildconfiguration: "Release"
+
+
 
 
