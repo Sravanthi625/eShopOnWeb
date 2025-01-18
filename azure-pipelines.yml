@@ -23,6 +23,7 @@
 # - devlopment
 # - Release
 # pool:
+
 # vmimage: 
 # vmimage: ubuntu-latest
 # variables:
@@ -65,6 +66,6 @@
 # this how we change the triggering point of your pipeline.
 
 
-#####5 
+###### .5
 
 
