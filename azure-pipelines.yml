@@ -1,18 +1,61 @@
-#name: simplewebapp_
+#1. Note: By default YAML Configuration is store with the name of ?
+## Azure-Pipeline.yml
+#Like: name:NetCoreMicroserviceCiCd
 #trigger:
-#- main
-#pool:
-#  name: kk
-#steps:
-#- task: VSBuild@1
+# -master
+#pool: 
+ # VmImage:ubuntu-latest
+#variables:
+#buildconfiguration: "Release"
 
-## I don't want to run my pipeline from any branch? i want to make it manually how it is possible?
+##2. I don't want to run my pipeline from any branch? i want to make it manually?
+# Like: name:netcoremicroserviceCiCd
+#trigger: none (disable trigger only)
+# pool:
+# vmimage: ubuntu-latest
+# variables
+# buildconfiguration: "Release"
 
-name: netcoremicroservice_$(date:yyyymmdd)
-trigger: 
-- master
-pool: 
- VmImage: ubuntu-latest
- variables: 
- buildconfiguration: "Release"
+###3. I want trigger my pipleline from both devlopment branch and Release branch? How it is possible?
+
+# name:netcoremicroservicecicd
+# trigger:
+# - devlopment
+# - Release
+# pool:
+# vmimage: 
+# vmimage: ubuntu-latest
+# variables:
+# buildconfiguration: "Release"
+
+####4. you identified the issue at one repository at one particular file.
+# then, i want to trigger that particular file only? is it possible??
+# Solution: Yes, it is possible.
+
+#name: netcoremicroservice
+#trigger: 
+# - master
+# INCLUDEEXCLUDEFILTERS:
+# INCLUDE:    (here we want to include the path of the file.)
+#(particularlly which you want to trigger)
+#pool: 
+# vmimage: ubuntu-latest
+#variables: 
+#buildconfiguration: "Release"
+
+#or
+
+#name: netcoremicroservice
+#trigger: 
+# batch: true
+# brannches: 
+# Include: 
+# - features/* (ex for one senario)
+# pool: 
+# vmimage: ubuntu-latest
+# variables:
+# buildconfiguration: "Release"
+
+#####5 
+
 
