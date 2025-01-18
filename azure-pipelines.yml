@@ -74,7 +74,7 @@
 #    - master
 
 # schdules: 
-# - corn: "0.0.*.*.*"
+# - corn: "0.0.*.*.*" (0 minutes, 0 hours means: midnight 12:00AM)
 # displayname: dailyMidghtbuild
 # branches: 
 # Include:
