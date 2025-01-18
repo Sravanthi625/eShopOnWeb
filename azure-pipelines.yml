@@ -85,5 +85,29 @@
 # buildconfiguration: "Release"
 
 
+### ###.6 Is it possible if i want to trigger my piprline there is no no code changes? in any repository?
+# yes, it is possible.
+
+# name: netcoremicroservicecicd
+# trigger:
+# - master
+
+
+# schdules:
+# - corn: "0.0.*.*.*"
+# display name: "daily midnight build"
+# branches: 
+# Include:
+# - master
+# Always: true
+
+
+# pool: 
+# VmImage: ubuntu-latest
+# Variables: 
+# buildconfiguration: "Release"
+
+
+
 
 
