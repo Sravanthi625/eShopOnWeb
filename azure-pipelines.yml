@@ -9,7 +9,8 @@
 ## I don't want to run my pipeline from any branch? i want to make it manually how it is possible?
 
 name: netcoremicroservice_$(date:yyyymmdd)
-trigger: none
+trigger: 
+- master
 pool: 
  VmImage: ubuntu-latest
  variables: 
