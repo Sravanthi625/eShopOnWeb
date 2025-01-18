@@ -107,6 +107,50 @@
 # Variables: 
 # buildconfiguration: "Release"
 
+### ### # . PULL REQUIREST
+# Merging the code from one branch to another branch.
+# Pull requirest trigger cause a pipeline to run whenever pull requirest is opened.
+# Once you done the pull requirest the cause the pipeline.
+#once we raise the pull requirest is opened here.
+#
+ # name: netcoremicroservicecicd
+ 
+
+ # pr: 
+ # - main
+ # release/*
+ 
+
+#so this architecture runs a new run, the first time new pull requirest is created.
+# after every update pull requirest
+# 1st it will run new release branch
+# then it will run new release branch
+# then, it is fine. then it automatically merge the code.
+
+# pool: 
+# vmimage: ubuntu-latest
+# variables:
+# buildconfiguration: "Release"
+
+
+
+# we detect the pipelines in 2 methods.
+# 1. CI Trigger.
+# 2. PR trigger.
+
+#1. CI Trigger: 
+# name: netcoremicroservicecicd
+# trigger: 
+# - master
+# pool:
+# vmimage: ubuntu-latest
+# variables: 
+# buildconfigurations: "Release"
+
+#2 PR Trigger
+# Pull Requirest.
+
+# this 2 methods your pipeline will trigger.
 
 
 
