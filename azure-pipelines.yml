@@ -1,7 +1,7 @@
-name: simplewebapp_$(Date:yyyyMMdd)
+name: simplewebapp_
 trigger:
 - main
 pool:
-  name: kotipool
+  name: kk
 steps:
 - task: VSBuild@1
