@@ -152,6 +152,22 @@
 
 # this 2 methods your pipeline will trigger.
 
+#### ####.8  Demands:
+# when you defined any agent.
+# agent want to specify the particular software or version which needed Demands.
+# If i want to install only specific dot . Net meachine or dot .Net specific version of agent then we use Demands.
+
+# Name: netcoremicroservicecicd
+# trigger: 
+# - master
+# pool: 
+# vm image: windows-latest
+# demands: 
+# name -equal windows-NT
+#(It means windows machine, windows family it will get Windows-NT operating system agent to run this build)
+#  variables:
+# buildconfiguration: "Release"
+
 
 
 
