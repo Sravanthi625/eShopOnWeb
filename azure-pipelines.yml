@@ -1,7 +1,17 @@
-name: simplewebapp_
-trigger:
-- main
-pool:
-  name: kk
-steps:
-- task: VSBuild@1
+#name: simplewebapp_
+#trigger:
+#- main
+#pool:
+#  name: kk
+#steps:
+#- task: VSBuild@1
+
+## I don't want to run my pipeline from any branch? i want to make it manually how it is possible?
+
+name: netcoremicroservice_$(date:yyyymmdd)
+trigger: none
+pool: 
+ VmImage: ubuntu-latest
+ variables: 
+ buildconfiguration: "Release"
+
