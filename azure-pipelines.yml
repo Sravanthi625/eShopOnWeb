@@ -51,6 +51,8 @@
 # brannches: 
 # Include: 
 # - features/* (ex for one senario)
+# Exclude:
+# -features/* (ex for one sinario)
 # pool: 
 # vmimage: ubuntu-latest
 # variables:
