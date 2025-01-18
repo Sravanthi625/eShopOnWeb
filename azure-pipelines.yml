@@ -169,5 +169,32 @@
 # buildconfiguration: "Release"
 
 
+# i want to give option to end user to slect the specific agent?
+# windows-linux, ubuntu-latest and macOs
+
+# name: netcoremicroservicecicd
+# trigger: none
+#  #(- master)
+#  #(pool: 
+#  vmimage:ubuntu-latest )
+#  Variables:
+#  BuildConfiguration: "Release"
+#  parameters:
+#  - name: image
+#  displayname:  poolimage
+#  type: string
+#  default: ubuntu-latest
+#  values:
+#   - windows-latest
+#   - ubuntu-latest
+#   - macOs-latest
+
+#   jobs:
+#   -job: build
+#   displayname: build
+#   pool:
+#   vmimage: ${{parameters.image}}
+#   steps:
+#   - script: echo "hellow-world"
 
 
